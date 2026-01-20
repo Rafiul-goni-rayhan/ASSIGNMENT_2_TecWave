@@ -744,9 +744,6 @@ width: 100%;
 
 
 
-
-
-
   
   .three-vedio {
     flex-direction: column; 
@@ -843,6 +840,8 @@ position: absolute;
   }
   .footer-bg>img{
     height: 250px;
+    width:auto;
+    max-width: 576px;
   } 
   
  
