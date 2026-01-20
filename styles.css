@@ -13,27 +13,29 @@ body {
   margin: 0 auto;
   margin-top: 30px;
   color: #ffffff;
+  overflow-x: hidden; /* হরিজন্টাল স্ক্রল রোধ করতে*/
 }
 
-/* nav */
+/* nav bar*/
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   justify-items: center;
   align-items: center;
   color: white;
   font-size: 16px;
-  padding: 30px;
+  padding: 40px 80px;
 }
+
+
 .nav-menu {
   display: flex;
-  justify-content: space-around;
-  justify-items: center;
-  align-items: center;
-  gap: 32px;
-  color: white;
+  gap: 40px;
   cursor: pointer;
+  gap: 32px;
+
 }
+
 .tecwave {
   font-size: 40px;
   font-weight: 700;
@@ -50,6 +52,13 @@ nav {
   border-radius: 30px;
   cursor: pointer;
   padding-right: 100px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .fa-bars {
   display: none;
@@ -70,6 +79,7 @@ nav {
   place-items: center;
   overflow: hidden;
   background-color: #1a0b2e; 
+  padding-bottom: 50px;
 }
 .banner-img {
   grid-area: 1/1; 
@@ -77,13 +87,17 @@ nav {
   height: auto;
   display: block;
   z-index: 1;
+  object-fit: cover;
+  /* opacity: 1; */
 }
 .hero-overlay {
   grid-area: 1/1; 
   z-index: 2;
-  display: flex;
+  text-align: center;
+   display: flex;
+
   flex-direction: column;
-  align-items: center;
+ align-items: center;
   justify-content: center;
   width: 100%;
   padding: 40px 20px;
@@ -93,7 +107,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px; 
+  margin-bottom: 0px; 
 }
 .circle-img {
   width: 350px 350px;  
@@ -113,13 +127,9 @@ nav {
 
 .mic-img {
   position: absolute;
-  width: 116px 175px; 
+  width: 116px 175px;  transition: transform 0.6s ease-in-out; 
+  cursor: pointer; transition: 0.6s ease;
 }
-.mic-img {
-  transition: transform 0.6s ease-in-out; 
-  cursor: pointer;
-}
-
 .mic-img:hover {
   transform: rotate(360deg); 
 }
@@ -137,20 +147,12 @@ nav {
   box-shadow: 0 0 15px rgba(12, 241, 134, 0.5);
 }
 
-
-.child-hero {
-  text-align: center;
-  color: white;
-}
-.child-hero p{
-  color: #ffffff;
-}
-
 .title {
   font-size: 64px; 
   font-weight: 800;
   margin: 0;
   letter-spacing: 1px;
+  line-height: 1.1;
 }
 
 .subtitle {
@@ -158,19 +160,39 @@ nav {
   color: rgba(255, 255, 255, 0.8);
   max-width: 600px;
   margin: 15px 0 30px 0;
+
+   color: #ffffff;
+  margin-top: 10px;
+  z-index: 5;
+  max-width: 500px;
+  text-align: center;
 }
-
-
 .spoty-sub {
   display: flex;
+   justify-content: center;
   gap: 15px;
 }
 
 
+.spotify,
+.subscrive-bg {
+  width: 50%;
+  padding: 16px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  margin-left: 20px;
+}
 
 .spotify {
   background: linear-gradient(90deg, #f8d34d, #d4379c, #2c49eb);
-  color: white;
+  color: white;   border: none; 
 }
 
 .subscrive-bg {
@@ -178,66 +200,20 @@ nav {
   border: 1px solid #0cf186;
   color: rgb(0, 255, 76);
   border: 2px solid green;
+    background-color: #26153d;
 }
 
 .spotify img, .subscrive-bg img {
-  width: 20px;
+  width: 30px;
 }
-
-
 .spoty-sub {
   display: flex;
   margin-top: 20px;
-
-}
-.spotify{
-  color: rgb(255, 255, 255);
-   border: none;
-}
-
-.spotify,
-.subscrive-bg {
-  width: 60%;
-  padding: 16px;
-  border-radius: 30px;
-  font-size: 16px;
- display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 60px;
-  font-weight: bold;
-  cursor: pointer;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.spotify {
-  background: linear-gradient(30deg, yellow, rgb(194, 25, 174), blue);
-}
-.subscrive-bg {
-  background-color: #26153d;
-}
-
-.title {
-  color: white;
-  font-size: 48px;
-  margin-top: 10px;
-}
-
-.subtitle {
-  color: #ffffff;
-  margin-top: 10px;
-  z-index: 5;
-  max-width: 500px;
-  text-align: center;
 }
 
 
-
-
-
-/* main  section */
+/* main  section 
+4. ABOUT & STATS SECTION*/
 .about-podcast {
   color: #ffffff;
   max-width: 1200px;
@@ -260,6 +236,7 @@ nav {
   justify-content: space-between;
   text-align: center;
   justify-items: center;
+  padding: 40px;
 }
 .right-AP h1 {
   color: #00ff88;
@@ -278,13 +255,34 @@ nav {
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3, 225px);
     gap: 30px;
-    padding: 120px;
+    padding: 120px; border-radius: 40px; padding: 40px 40px
+}
+.box {
+  background: #351165;
+  padding: 40px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+.grid h2{
     
-  
+     display: flex;            
+    flex-direction: column;  
+    justify-content: center;      
+    padding: 30px;          
+    gap: 15px;     font-size: 48px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;    
 }
-.grid{
-    margin-bottom: 10px;
+
+ h1{
+    font-size: 24px;
+    gap: 20px;
 }
+
  .box-1{
     grid-row: 1/span 2;
 } 
@@ -298,38 +296,16 @@ nav {
 .box-4{
     grid-column: 1/span 2;
 }
-.grid-container .box{
-    border-radius: 40px;
-    padding: 40px 40px;
-    max-width: 1200px;
-    background-color: #351165;
 
-}
-/* .grid{
-    padding-top: 100px;
-} */
-.grid h2{
-    font-size: 48px;
-    color: #ffffff;
-    font-weight: bold;
-    text-align: center;
-}
- h1{
-    font-size: 24px;
-    gap: 20px;
-}
-.box ,  h2{
-    
-     display: flex;            
-    flex-direction: column;  
-    justify-content: center;      
-    padding: 30px;          
-    gap: 15px;     
-}
+
+
+
 
 .fa-regular{
    font-size: 50px;
 }
+
+
 /* feature-episode  */
 
 
@@ -400,6 +376,141 @@ nav {
 }
 
 
+
+
+/* meet mthe host section  */
+
+.meet{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+}
+.host-title h1{
+    font-size: 48px; 
+    text-align: center;
+    padding: 40px;
+}
+
+.the-host{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    background-color:#351165;
+    border-radius: 20px;
+    padding: 40px;
+
+}
+.the-host h1{
+    font-size: 48px;
+    padding: 30px;
+}
+
+.links{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+  
+   
+}
+.links button{
+     background-color: #33214b; 
+      padding: 20px;
+      border-radius: 50px;
+      border: 1px solid gray;
+
+}
+
+
+
+
+
+
+
+
+/* footer  */
+
+
+.footer-div {
+  position: relative; 
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  /* min-height: 400px;  eita dile se height dhore rakhe tai responsiove hoy na */
+}
+.footer_bg_img {
+  /* position: absolute; eita dewa jabe na */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: 1;
+}
+
+.child-div {
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  width: 100%;
+  color: white; 
+  z-index: 1; 
+}
+
+
+
+.btn-grid{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+
+
+
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-div button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2); 
+  color: #fff;
+}
+
+
+.cprt p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    white-space: nowrap; 
+}
+
+
+
+
+
+
+
+
+
+
+.hidden{
+  display: none;
+}
 @media screen and (max-width: 576px) {
     .three-vedio {
         flex-direction: column; 
@@ -424,198 +535,6 @@ nav {
     transform: translate(-50%, -50%) scale(1.1);
     color: #ff1a8c;
 }
-
-/* meet mthe host section  */
-
-.meet{
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-
-}
-.host-title h1{
-    font-size: 48px; 
-    text-align: center;
-    padding: 40px;
-}
-
-.the-host{
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    background-color:#351165;
-    border-radius: 20px;
-    padding: 40px;
-
-}
-.the-host h1{
-    font-size: 48px;
-    padding: 30px;
-}
-
-.links{
-    display: flex;
-    gap: 30px;
-    justify-items: center;
-    justify-content: flex-start;
-  
-   
-}
-.links button{
-     background-color: #33214b; 
-      padding: 20px;
-      border-radius: 50px;
-      border: 1px solid gray;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.footer{
-  display: flex;
-  flex-direction: column;
-}
-.btn-grid{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-  gap: 40px;
-  padding: 20px;
-}
-
-.footer-div {
-  position: relative; 
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  overflow: hidden;
-  min-height: 400px; 
-}
-
-.footer_bg_img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  display: block;
-}
-
-.child-div {
-  position: absolute;
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  text-align: center;
-  width: 100%;
-  color: white; 
-  z-index: 1; 
-}
-
-
-.btn-div {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.btn-div button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.2); 
-  color: #fff;
-}
-
-.btn-div button img {
-  width: 20px;
-}
-.cprt p {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 14px;
-    white-space: nowrap; 
-}
-
-
-
-
-
-
-
-.btn-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    border: none;
-    
-}
-button{
-  padding: 0px;
-  width: 94px;
-  height: auto;
-  background-color: #1f1247;
-  border: none;
-  color: white;
-  gap: 20px;
-  display: flex;         
-    align-items: center;
-    justify-content: space-around;  
-    gap: 10px;
-cursor: pointer;
-}
-.btn-div img{
-  gap: 30px;
-}
-
-
-.btn-div{
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px; 
-    flex-wrap: wrap;
-}
-.btn-div button {
-    background: transparent; 
-    border: none;
-    color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    align-items: center;
-    gap: 8px; 
-    font-size: 16px;
-    cursor: pointer;
-    width: auto; 
-}
-.btn-div p {
-    /* width: 500px;             */
-    white-space: nowrap;    
-    overflow: hidden;       
-    text-align: center;     
-    margin: 20px auto;       
-    /* margin-left: 20px; */
- 
-    flex-basis: 100%;     
-}
-
-
-
 @media screen and (max-width: 575px) {
   
  *{
@@ -627,7 +546,6 @@ cursor: pointer;
     width: 100% ;  
     overflow-x: hidden; 
   }
-/*  */
 .child-div {
   position: absolute; 
   top: 50%; 
