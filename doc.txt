@@ -1,7 +1,7 @@
 echo "# ASSIGNMENT_2_TecWave" >> README.md
 git init
 git add README.md
-git commit -m "first commit"
+git commit -m "previous repo unpublish hoye geche tai eita new repo "
 git branch -M main
 git remote add origin https://github.com/Rafiul-goni-rayhan/ASSIGNMENT_2_TecWave.git
 git push -u origin main
