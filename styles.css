@@ -902,11 +902,9 @@ position: absolute;
 
 .banner-img,
 .circle-img,
-
-
 .mic-img {
   grid-area: 1/1;
-  border: 2px solid white;
+  /* border:none; */
    height: 47%; 
    transition: transform 0.9s ease-in-out; 
   cursor: pointer;
